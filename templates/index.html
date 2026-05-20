@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PowerWise AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>⚡ PowerWise AI</h1>
+    <p class="subtitle">Smart Electricity Bill Prediction System</p>
+
+    <form action="/predict" method="post">
+
+        <input type="number" name="units" placeholder="Units Consumed" required>
+
+        <input type="number" name="ac_hours" placeholder="AC Usage Hours Per Day" required>
+
+        <input type="number" name="temperature" placeholder="Temperature (°C)" required>
+
+        <button type="submit">Predict Bill</button>
+
+    </form>
+
+    <div class="result-box">
+        <h2>{{ prediction_text }}</h2>
+        <h3>{{ suggestion_text }}</h3>
+    </div>
+
+</div>
+
+</body>
+</html>
