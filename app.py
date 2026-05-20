@@ -22,7 +22,7 @@ def predict():
 
     prediction = model.predict(features)
 
-    result = round(prediction[0], 2)
+    result = max(100, round(prediction[0], 2))
 
     if result < 1500:
         suggestion = "Low electricity usage ✅"
